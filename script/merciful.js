@@ -12,9 +12,9 @@
     {
       id: 'chinchin-01',
       name: 'Chin Chin',
-      price: 700,
+      price: 14000,
       description: 'Lightly sweet chin chin with a crisp, golden crunch.',
-      image: 'images/general snacks.jpeg'
+      image: 'images/14,000 chin chin.jpeg'
     },
     {
       id: 'peanut-02',
@@ -520,3 +520,4 @@
     renderCartPage();
   });
 })();
+
