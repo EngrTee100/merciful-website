@@ -19,7 +19,7 @@
     {
       id: 'peanut-02',
       name: 'Peanut Burger',
-      price: 1100,
+      price: 2300,
       description: 'Roasted peanut burger with a rich, nutty aroma.',
       image: 'images/2300 peanut.jpeg'
     },
@@ -520,4 +520,5 @@
     renderCartPage();
   });
 })();
+
 
