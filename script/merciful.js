@@ -3,7 +3,7 @@
   const API_BASE = 'http://localhost:3000'; // Change if backend is elsewhere; use empty string for same origin
   const PRODUCTS_KEY = 'mc_products';
   const PRODUCTS_VERSION_KEY = 'mc_products_version';
-  const PRODUCTS_VERSION = 2;
+  const PRODUCTS_VERSION = 5;
   const CART_KEY = 'mc_cart';
   const ORDERS_KEY = 'mc_orders';
 
@@ -11,86 +11,86 @@
   const defaultProducts = [
     {
       id: 'chinchin-01',
-      name: 'Crunchy Chinchin (250g)',
+      name: 'Chin Chin',
       price: 700,
-      description: 'Golden, sweet crunchy chinchin made in small batches.',
+      description: 'Lightly sweet chin chin with a crisp, golden crunch.',
+      image: 'images/general snacks.jpeg'
+    },
+    {
+      id: 'peanut-02',
+      name: 'Peanut Burger',
+      price: 1100,
+      description: 'Roasted peanut burger with a rich, nutty aroma.',
+      image: 'images/2300 peanut.jpeg'
+    },
+    {
+      id: 'chinchin-03',
+      name: 'Chin Chin',
+      price: 850,
+      description: 'Extra-crunchy chin chin with a buttery finish.',
       image: '../images/general snacks.jpeg'
     },
     {
-      id: 'peanut-01',
-      name: 'Peanut Burger (single)',
-      price: 2300,
-      description: 'Savory peanut burger — crunchy and satisfying.',
-      image: '../images/2300 peanut.jpeg'
-    },
-    {
-      id: 'puff-puff-01',
-      name: 'Puff Puff (6 pcs)',
-      price: 500,
-      description: 'Soft and fluffy puff puff, perfect for any time snack.',
-      image: '../images/general snacks.jpeg'
-    },
-    {
-      id: 'plantain-chips-01',
-      name: 'Plantain Chips (200g)',
-      price: 1000,
-      description: 'Crispy golden plantain chips — crunchy and addictive.',
+      id: 'peanut-04',
+      name: 'Peanut Burger',
+      price: 1200,
+      description: 'Crunchy peanut burger blended with mild caramel notes.',
       image: '../images/plantain-chips.jpg'
     },
     {
-      id: 'meat-pie-01',
-      name: 'Meat Pie (single)',
-      price: 600,
-      description: 'Golden pastry filled with savory spiced meat.',
+      id: 'chinchin-05',
+      name: 'Chin Chin',
+      price: 650,
+      description: 'Classic chin chin pieces with a soft-spiced sweetness.',
       image: '../images/meat-pie.jpg'
     },
     {
-      id: 'samosa-01',
-      name: 'Samosa (3 pcs)',
-      price: 700,
-      description: 'Crispy triangular pastries with spicy meat filling.',
+      id: 'peanut-06',
+      name: 'Peanut Burger',
+      price: 1300,
+      description: 'Thick peanut burger slabs with a satisfying bite.',
       image: '../images/samosa.jpg'
     },
     {
-      id: 'spring-rolls-01',
-      name: 'Spring Rolls (4 pcs)',
-      price: 800,
-      description: 'Crispy spring rolls with vegetables and meat filling.',
+      id: 'chinchin-07',
+      name: 'Chin Chin',
+      price: 750,
+      description: 'Sweet chin chin nuggets made in small batches.',
       image: '../images/spring-rolls.jpg'
     },
     {
-      id: 'akara-01',
-      name: 'Akara Balls (6 pcs)',
-      price: 400,
-      description: 'Fluffy fried bean balls, traditional Nigerian favorite.',
+      id: 'peanut-08',
+      name: 'Peanut Burger',
+      price: 1400,
+      description: 'Crunchy peanut burger with a roasted peanut finish.',
       image: '../images/akara-balls.jpg'
     },
     {
-      id: 'coconut-balls-01',
-      name: 'Coconut Balls (5 pcs)',
+      id: 'chinchin-09',
+      name: 'Chin Chin',
       price: 500,
-      description: 'Sweet coconut balls coated with sugar.',
+      description: 'Mini chin chin bites with a gentle vanilla aroma.',
       image: '../images/coconut-balls.jpg'
     },
     {
-      id: 'chin-chin-regular-01',
-      name: 'Regular Chin Chin (300g)',
-      price: 1200,
-      description: 'Classic crunchy chin chin, lightly salted.',
+      id: 'peanut-10',
+      name: 'Peanut Burger',
+      price: 1500,
+      description: 'Premium peanut burger bars with extra nutty crunch.',
       image: '../images/chin-chin-regular.jpg'
     },
     {
-      id: 'fish-roll-01',
-      name: 'Fish Roll (single)',
-      price: 650,
-      description: 'Crispy pastry filled with seasoned fish and vegetables.',
+      id: 'chinchin-11',
+      name: 'Chin Chin',
+      price: 800,
+      description: 'Crisp chin chin with a toasted sugar glaze.',
       image: '../images/fish-roll.jpg'
     },
     {
-      id: 'donut-01',
-      name: 'Glazed Donuts (3 pcs)',
-      price: 900,
-      description: 'Soft fluffy donuts with sweet glaze coating.',
+      id: 'peanut-12',
+      name: 'Peanut Burger',
+      price: 1600,
+      description: 'Hearty peanut burger squares with deep roasted flavor.',
       image: '../images/donuts.jpg'
     }
   ];
@@ -148,6 +148,13 @@
   function escapeHtml(s = '') {
     return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
+  function resolveImage(path = '') {
+    const isPaymentPage = window.location.pathname.includes('/payment page/');
+    const base = isPaymentPage ? '../images/' : 'images/';
+    if (path.startsWith('../images/')) return base + path.slice('../images/'.length);
+    if (path.startsWith('images/')) return base + path.slice('images/'.length);
+    return path;
+  }
 
   // Render product list by looping the products array
   function renderProducts() {
@@ -159,7 +166,7 @@
       const card = document.createElement('article');
       card.className = 'product';
       card.innerHTML = `
-        <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy" />
+        <img src="${escapeHtml(resolveImage(p.image))}" alt="${escapeHtml(p.name)}" loading="lazy" />
         <h3>${escapeHtml(p.name)}</h3>
         <div class="price">${formatCurrency(p.price)}</div>
         <p class="muted">${escapeHtml(p.description || '')}</p>
@@ -212,7 +219,7 @@
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML = `
-        <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" />
+        <img src="${escapeHtml(resolveImage(p.image))}" alt="${escapeHtml(p.name)}" />
         <div style="flex:1">
           <div><strong>${escapeHtml(p.name)}</strong></div>
           <div class="muted">${formatCurrency(p.price || 0)} each</div>
