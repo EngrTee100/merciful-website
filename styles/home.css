@@ -12,7 +12,7 @@
 
 .flyer-placeholder img {
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   height: 220px;
   border-radius: 10px;
   object-fit: contain;
@@ -226,4 +226,5 @@
     width: 100%;
   }
 }
+
 
