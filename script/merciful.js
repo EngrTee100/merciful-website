@@ -19,30 +19,30 @@
     {
       id: 'peanut-02',
       name: 'Peanut Burger',
-      price: 2300,
-      description: 'Roasted peanut burger with a rich, nutty aroma.',
-      image: 'images/2300 peanut.jpeg'
+      price: 2500,
+      description: 'Roasted peanut burger with a rich, nutty aroma.(Round Plastic)',
+      image: 'images/2500 peanut.jpeg'
     },
     {
       id: 'chinchin-03',
       name: 'Chin Chin',
-      price: 850,
-      description: 'Extra-crunchy chin chin with a buttery finish.',
-      image: '../images/general snacks.jpeg'
+      price: 2500,
+      description: 'Extra-crunchy chin chin with a buttery finish.(Round Plastic)',
+      image: 'images/2500 chin chin.jpeg'
     },
     {
       id: 'peanut-04',
       name: 'Peanut Burger',
-      price: 1200,
-      description: 'Crunchy peanut burger blended with mild caramel notes.',
-      image: '../images/plantain-chips.jpg'
+      price: 2000,
+      description: 'Crunchy peanut burger blended with mild caramel notes.(plastic bottle)',
+      image: 'images/2000 peanut.jpeg'
     },
     {
       id: 'chinchin-05',
-      name: 'Chin Chin',
-      price: 650,
-      description: 'Classic chin chin pieces with a soft-spiced sweetness.',
-      image: '../images/meat-pie.jpg'
+      name: 'Sachet Chin Chin',
+      price: 2000,
+      description: 'Classic chin chin pieces with a soft-spiced sweetness.(Sachet)',
+      image: 'images/2000 sachet chin chin.jpeg'
     },
     {
       id: 'peanut-06',
@@ -54,9 +54,9 @@
     {
       id: 'chinchin-07',
       name: 'Chin Chin',
-      price: 750,
-      description: 'Sweet chin chin nuggets made in small batches.',
-      image: '../images/spring-rolls.jpg'
+      price: 1000,
+      description: 'Sweet chin chin nuggets made in small batches.(Plastic Bottle)',
+      image: 'images/1000 chin chin.jpeg'
     },
     {
       id: 'peanut-08',
@@ -156,6 +156,48 @@
     return path;
   }
 
+  let imageModal = null;
+  function ensureImageModal() {
+    if (imageModal) return imageModal;
+    imageModal = document.createElement('div');
+    imageModal.className = 'image-modal';
+    imageModal.innerHTML = `
+      <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="Product image preview">
+        <button class="image-modal-close" type="button" aria-label="Close">&times;</button>
+        <img src="" alt="" />
+        <div class="image-modal-caption"></div>
+      </div>
+    `;
+    document.body.appendChild(imageModal);
+
+    imageModal.addEventListener('click', (e) => {
+      if (e.target === imageModal) closeImageModal();
+    });
+    const closeBtn = imageModal.querySelector('.image-modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeImageModal);
+
+    return imageModal;
+  }
+
+  function openImageModal(src, altText) {
+    const modal = ensureImageModal();
+    const img = modal.querySelector('img');
+    const caption = modal.querySelector('.image-modal-caption');
+    if (img) {
+      img.src = src;
+      img.alt = altText || 'Product image';
+    }
+    if (caption) caption.textContent = altText || '';
+    modal.classList.add('open');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeImageModal() {
+    if (!imageModal) return;
+    imageModal.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  }
+
   // Render product list by looping the products array
   function renderProducts() {
     if (!productGrid) return;
@@ -166,7 +208,7 @@
       const card = document.createElement('article');
       card.className = 'product';
       card.innerHTML = `
-        <img src="${escapeHtml(resolveImage(p.image))}" alt="${escapeHtml(p.name)}" loading="lazy" />
+        <img class="product-image" src="${escapeHtml(resolveImage(p.image))}" alt="${escapeHtml(p.name)}" loading="lazy" />
         <h3>${escapeHtml(p.name)}</h3>
         <div class="price">${formatCurrency(p.price)}</div>
         <p class="muted">${escapeHtml(p.description || '')}</p>
@@ -312,6 +354,18 @@
       renderCartPage();
       return;
     }
+  });
+
+  if (productGrid) {
+    productGrid.addEventListener('click', (e) => {
+      const img = e.target.closest('.product-image');
+      if (!img) return;
+      openImageModal(img.src, img.alt);
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeImageModal();
   });
 
   // Redirect to WhatsApp for payment
@@ -520,7 +574,3 @@
     renderCartPage();
   });
 })();
-
-
-
-
