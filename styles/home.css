@@ -93,7 +93,7 @@
   margin-bottom: 8px;
   background: #fff;
   border: 1px solid #f3e9e0;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .product h3 {
