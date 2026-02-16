@@ -60,17 +60,17 @@
     },
     {
       id: 'peanut-08',
-      name: 'Peanut Burger',
-      price: 1400,
-      description: 'Crunchy peanut burger with a roasted peanut finish.',
-      image: '../images/akara-balls.jpg'
+      name: 'Sachet Peanut Burger',
+      price: 200,
+      description: 'Crunchy peanut burger with a roasted peanut finish.(200 each)',
+      image: 'images/200 each sachet peanut.jpeg'
     },
     {
       id: 'chinchin-09',
-      name: 'Chin Chin',
-      price: 500,
-      description: 'Mini chin chin bites with a gentle vanilla aroma.',
-      image: '../images/coconut-balls.jpg'
+      name: 'Sachet Chin Chin',
+      price: 200,
+      description: 'Mini chin chin bites with a gentle vanilla aroma.(200 each)',
+      image: 'images/200 each sachet chin chin.jpeg'
     },
     {
       id: 'peanut-10',
