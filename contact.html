@@ -11,7 +11,7 @@
   <header class="site-header">
     <div class="container header-grid">
       <a class="brand" href="index.html">MERCIFUL CRUNCHY</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Shop</a>
         <a href="about.html">About</a>
         <a href="contact.html" aria-current="page">Contact</a>
@@ -22,45 +22,45 @@
 
   <main class="container">
     <h1>Contact Us</h1>
-    <p>Reach out to us directly or send a message below. We'll get back to you as soon as possible.</p>
+    <p class="page-lead">Reach out to us directly or send a message below. We'll get back to you as soon as possible.</p>
 
     <!-- Quick Contact Options -->
-    <section style="margin-top:24px;padding:20px;background:#f9f5f0;border-radius:12px;margin-bottom:24px">
-      <h2 style="margin-top:0">Get in Touch</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px">
+    <section class="quick-contact-section">
+      <h2 class="quick-contact-heading">Get in Touch</h2>
+      <div class="quick-contact-grid">
         <!-- Phone -->
-        <div style="padding:16px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-          <h3 style="margin:0 0 8px 0;color:#d97706">📞 Call Us</h3>
-          <p class="muted" style="margin:0">Monday - Saturday, 8:00 AM - 10:00 PM</p>
-          <a href="tel:+2349037464756" style="display:inline-block;margin-top:8px;font-weight:600;color:#d97706;text-decoration:none">+234 903 746 4756</a>
+        <div class="quick-contact-card">
+          <h3 class="quick-contact-title contact-accent">📞 Call Us</h3>
+          <p class="muted quick-contact-copy">Monday - Saturday, 8:00 AM - 10:00 PM</p>
+          <a href="tel:+2349037464756" class="quick-contact-link contact-accent">+234 903 746 4756</a>
         </div>
 
         <!-- WhatsApp -->
-        <div style="padding:16px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-          <h3 style="margin:0 0 8px 0;color:#25d366">💬 WhatsApp</h3>
-          <p class="muted" style="margin:0">Instant messaging with quick replies</p>
-          <a href="https://wa.me/2349037464756?text=Hello%20Merciful%20Crunchy%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-weight:600;color:#25d366;text-decoration:none">Start Chat</a>
+        <div class="quick-contact-card">
+          <h3 class="quick-contact-title whatsapp-accent">💬 WhatsApp</h3>
+          <p class="muted quick-contact-copy">Instant messaging with quick replies</p>
+          <a href="https://wa.me/2349037464756?text=Hello%20Merciful%20Crunchy%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" target="_blank" rel="noopener" class="quick-contact-link whatsapp-accent">Start Chat</a>
         </div>
 
         <!-- Email -->
-        <div style="padding:16px;background:white;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-          <h3 style="margin:0 0 8px 0;color:#d97706">✉️ Email</h3>
-          <p class="muted" style="margin:0">Send us an email anytime</p>
-          <a href="mailto:merciemaiye@gmail.com" style="display:inline-block;margin-top:8px;font-weight:600;color:#d97706;text-decoration:none;word-break:break-all">merciemaiye@gmail.com</a>
+        <div class="quick-contact-card">
+          <h3 class="quick-contact-title contact-accent">✉️ Email</h3>
+          <p class="muted quick-contact-copy">Send us an email anytime</p>
+          <a href="mailto:merciemaiye@gmail.com" class="quick-contact-link contact-accent email-link">merciemaiye@gmail.com</a>
         </div>
       </div>
     </section>
 
     <!-- Contact Form -->
-    <section style="max-width:600px">
+    <section class="contact-form-section">
       <h2>Send us a Message</h2>
       <form id="contact-form" class="contact-form">
         <label>
-          Your name <span style="color:#d97706">*</span>
+          Your name <span class="required-mark">*</span>
           <input type="text" id="contact-name" required />
         </label>
         <label>
-          Email <span style="color:#d97706">*</span>
+          Email <span class="required-mark">*</span>
           <input type="email" id="contact-email" required />
         </label>
         <label>
@@ -68,30 +68,30 @@
           <input type="tel" id="contact-phone" />
         </label>
         <label>
-          Message <span style="color:#d97706">*</span>
+          Message <span class="required-mark">*</span>
           <textarea id="contact-message" rows="6" required placeholder="Tell us how we can help..."></textarea>
         </label>
         <div>
           <button type="submit" class="btn-primary">Send Message</button>
         </div>
-        <p id="contact-status" class="muted" role="status" aria-live="polite" style="margin-top:12px"></p>
+        <p id="contact-status" class="muted status-copy" role="status" aria-live="polite"></p>
       </form>
     </section>
 
     <!-- Business Hours & Location -->
-    <section style="margin-top:40px;padding:20px;background:#fff9f3;border-radius:12px">
-      <h2 style="margin-top:0">Business Information</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <section class="business-section">
+      <h2 class="business-heading">Business Information</h2>
+      <div class="business-grid">
         <div>
           <h3>Hours of Operation</h3>
-          <ul style="list-style:none;padding:0;margin:0">
-            <li style="padding:4px 0"><strong>Monday - Saturday:</strong> 8:00 AM - 10:00 PM</li>
-            <li style="padding:4px 0"><strong>Sunday:</strong> Closed</li>
+          <ul class="hours-list">
+            <li class="hours-item"><strong>Monday - Saturday:</strong> 8:00 AM - 10:00 PM</li>
+            <li class="hours-item"><strong>Sunday:</strong> Closed</li>
           </ul>
         </div>
         <div>
           <h3>Location</h3>
-          <p style="margin:0">
+          <p class="location-copy">
             MERCIFUL CRUNCHY<br/>
             Igbesa, Ogun State<br/>
             <a href="tel:+2349037464756">+234 903 746 4756</a>
@@ -103,8 +103,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
-      <p><a href="index.html">Shop</a> • <a href="about.html">About</a> • <a href="contact.html">Contact</a></p>
+      <p class="footer-copy">&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
+      <p class="footer-copy"><a href="index.html">Shop</a> • <a href="about.html">About</a> • <a href="contact.html">Contact</a></p>
     </div>
   </footer>
 
@@ -152,6 +152,3 @@
   </script>
 </body>
 </html>
-
-
-
