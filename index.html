@@ -11,7 +11,7 @@
   <header class="site-header">
     <div class="container header-grid">
       <a class="brand" href="index.html">MERCIFUL CRUNCHY</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Shop</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -31,7 +31,7 @@
     <section class="hero">
       <div>
         <h1>Crunchy Chinchin & Savory Peanut Burger</h1>
-        <p>Freshly made snacks — handcrafted, crunchy, and delicious. Order now for pickup or delivery.</p>
+        <p class="hero-copy">Freshly made snacks — handcrafted, crunchy, and delicious. Order now for pickup or delivery.</p>
         <a class="btn-primary" href="#products">Shop Now</a>
       </div>
       <figure aria-hidden="true" class="hero-media">
@@ -42,11 +42,11 @@
           loop 
           playsinline 
           poster="images/general snacks.jpeg"
-          style="width:100%;height:auto;border-radius:8px;object-fit:cover">
+          class="hero-video">
           <source src="videos/animation video.mp4" type="video/mp4">
           <source src="videos/animation video.mp4" type="video/webm">
           <!-- Fallback image -->
-          <img src="images/general snacks.jpeg" alt="Crunchy chinchin and peanut burger snacks" style="width:100%;height:auto;border-radius:8px;object-fit:cover" />
+          <img src="images/general snacks.jpeg" alt="Crunchy chinchin and peanut burger snacks" class="hero-video-fallback" />
         </video>
       </figure>
     </section>
@@ -54,30 +54,30 @@
     <section id="products" class="products">
       <h2>Our Specials</h2>
       <div class="product-grid" id="product-grid">
-        <!-- Products are inserted by script.js -->
+        <!-- Products are inserted by merciful.js -->
       </div>
     </section>
 
     <section class="info-cards">
       <article>
         <h3>How to Order</h3>
-        <ol>
-          <li>Add items to your cart.</li>
-          <li>Open Cart, fill contact & delivery details.</li>
-          <li>Place your order — you'll get a confirmation number.</li>
+        <ol class="order-steps">
+          <li class="step-item">Add items to your cart.</li>
+          <li class="step-item">Open Cart, fill contact & delivery details.</li>
+          <li class="step-item">Place your order — you'll get a confirmation number.</li>
         </ol>
       </article>
       <article>
         <h3>Why MERCIFUL CRUNCHY?</h3>
-        <p>Traditional recipes, high-quality peanuts, and small-batch frying for the perfect crunch.</p>
+        <p class="value-copy">Traditional recipes, high-quality peanuts, and small-batch frying for the perfect crunch.</p>
       </article>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
-      <p>Follow us on social or contact <a href="contact.html">here</a>.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> MERCIFUL CRUNCHY — All rights reserved.</p>
+      <p class="footer-copy">Follow us on social or contact <a href="contact.html">here</a>.</p>
     </div>
   </footer>
 
@@ -87,4 +87,3 @@
   </script>
 </body>
 </html>
-
