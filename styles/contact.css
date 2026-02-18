@@ -22,6 +22,89 @@
   opacity: 0.95;
 }
 
+.page-lead {
+  margin: 8px 0 0;
+  max-width: 64ch;
+  padding-left: 12px;
+  border-left: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.quick-contact-section {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f9f5f0;
+  border-radius: 12px;
+}
+
+.quick-contact-heading {
+  margin-top: 0;
+}
+
+.quick-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.quick-contact-card {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.quick-contact-title {
+  margin: 0 0 8px 0;
+}
+
+.contact-accent {
+  color: var(--accent);
+}
+
+.whatsapp-accent {
+  color: #25d366;
+}
+
+.quick-contact-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.email-link {
+  word-break: break-all;
+}
+
+.contact-form-section {
+  max-width: 600px;
+}
+
+.required-mark {
+  color: var(--accent);
+}
+
+.business-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff9f3;
+  border-radius: 12px;
+}
+
+.business-heading {
+  margin-top: 0;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 /* Contact Content Grid */
 .contact-content {
   display: grid;
@@ -151,6 +234,44 @@
 .contact-info-item .icon {
   font-size: 1.5rem;
   margin-right: 8px;
+}
+
+.quick-contact-copy {
+  line-height: 1.55;
+}
+
+.hours-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--card) 92%, var(--accent) 8%);
+  border: 1px solid #f3e9e0;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.location-copy {
+  margin: 0;
+  line-height: 1.65;
+  color: #374151;
+}
+
+.status-copy {
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* Buttons in Contact Info */
@@ -295,6 +416,10 @@
 
   .contact-form-container {
     padding: 16px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
   }
 
   .map-container {
