@@ -34,7 +34,7 @@
       id: 'peanut-04',
       name: 'Peanut Burger',
       price: 2000,
-      description: 'Crunchy peanut burger blended with mild caramel notes.(plastic bottle)',
+      description: 'Crunchy peanut burger blended with mild caramel notes.(Plastic Bottle)',
       image: 'images/2000 peanut.jpeg'
     },
     {
@@ -46,10 +46,10 @@
     },
     {
       id: 'peanut-06',
-      name: 'Peanut Burger',
-      price: 1300,
-      description: 'Thick peanut burger slabs with a satisfying bite.',
-      image: '../images/samosa.jpg'
+      name: 'Chin Chin',
+      price: 2000,
+      description: 'Thick chin chin slabs with a satisfying bite.(Plastic Bottle)',
+      image: 'images/2000 plastic bottle chin chin.jpeg'
     },
     {
       id: 'chinchin-07',
@@ -62,36 +62,36 @@
       id: 'peanut-08',
       name: 'Sachet Peanut Burger',
       price: 200,
-      description: 'Crunchy peanut burger with a roasted peanut finish.(200 each)',
-      image: 'images/200 each sachet peanut.jpeg'
+      description: 'Crunchy peanut burger with a roasted peanut finish.',
+      image: 'images/200 sachet peanut.jpeg'
     },
     {
       id: 'chinchin-09',
       name: 'Sachet Chin Chin',
       price: 200,
-      description: 'Mini chin chin bites with a gentle vanilla aroma.(200 each)',
-      image: 'images/200 each sachet chin chin.jpeg'
+      description: 'Mini chin chin bites with a gentle vanilla aroma.',
+      image: 'images/200 sachet chin chin.jpeg'
     },
     {
       id: 'peanut-10',
       name: 'Peanut Burger',
-      price: 1500,
-      description: 'Premium peanut burger bars with extra nutty crunch.',
-      image: '../images/chin-chin-regular.jpg'
+      price: 1000,
+      description: 'Premium peanut burger bars with extra nutty crunch.(Round Plate)',
+      image: 'images/1000 round plate peanut.jpeg'
     },
     {
       id: 'chinchin-11',
       name: 'Chin Chin',
-      price: 800,
-      description: 'Crisp chin chin with a toasted sugar glaze.',
-      image: '../images/fish-roll.jpg'
+      price: 1000,
+      description: 'Crisp chin chin with a toasted sugar glaze.(Round Plate)',
+      image: 'images/1000 round plate chin chin.jpeg'
     },
     {
       id: 'peanut-12',
       name: 'Peanut Burger',
       price: 1600,
       description: 'Hearty peanut burger squares with deep roasted flavor.',
-      image: '../images/donuts.jpg'
+      image: 'images/1600 peanut burger.jpeg'
     }
   ];
 
