@@ -91,7 +91,7 @@
       name: 'Package Peanut Burger',
       price: 1000,
       description: 'Hearty peanut burger squares with deep roasted flavor.',
-      image: 'images/1000 package Sachet peanut.jpg'
+      image: 'images/1000 Package Sachet peanut.jpg'
     },
     {
       id: 'chinchin-13',
