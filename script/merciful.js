@@ -3,7 +3,7 @@
   const API_BASE = 'http://localhost:3000'; // Change if backend is elsewhere; use empty string for same origin
   const PRODUCTS_KEY = 'mc_products';
   const PRODUCTS_VERSION_KEY = 'mc_products_version';
-  const PRODUCTS_VERSION = 5;
+  const PRODUCTS_VERSION = 8;
   const CART_KEY = 'mc_cart';
   const ORDERS_KEY = 'mc_orders';
 
@@ -88,10 +88,24 @@
     },
     {
       id: 'peanut-12',
-      name: 'Peanut Burger',
-      price: 1600,
+      name: 'Package Peanut Burger',
+      price: 1000,
       description: 'Hearty peanut burger squares with deep roasted flavor.',
-      image: 'images/1600 peanut burger.jpeg'
+      image: 'images/1000 package Sachet peanut.jpg'
+    },
+    {
+      id: 'chinchin-13',
+      name: 'Package Chin Chin',
+      price: 1000,
+      description: 'Golden chin chin with a perfectly crisp texture.',
+      image: 'images/1000 Package Sachet chin chin.jpg'
+    },
+    {
+      id: 'peanut-14',
+      name: 'Package Peanut Burger',
+      price: 1000,
+      description: 'Rich roasted peanut burger with a bold, nutty flavor.',
+      image: 'images/1000 Package Sachet peanut.jpg'
     }
   ];
 
